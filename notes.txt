@@ -57,3 +57,15 @@ Le meilleur résultat est celui avec le splitter random
 Avec le 5-cross validation on constate que le résultat de l'arbre trop grand n'a pas changé mais tous les autres l'ont plus ou moins rejoint.
 On peut imaginer qu'en limitant la taille de l'arbre on a ammené l'arbre à générer des bonnes réponses par coincidence.
 
+---------------- 9
+
+Le plus dangeureux dans notre cas est les faux positif qui rendraient criminels des non-criminels.
+En voyant la confusion matrix on peut voir que ce parametre est très élevé ce qui n'est pas bon.
+
+---------------- 10 
+
+Pour savoir si l'algorithme est équitable ou non vis à vis d'une éthnie on pourrait :
+- Faire marcher l'algorithme avec les ethnies en parametre
+- Le faire marcher sans mentionner les ethnies
+- Faire la différence entre les matrices de confusions des 2 mesures
+Si il y'a une grandes différences entre les résultats alors ont peut estimer que l'algorithme n'est pas équitable
