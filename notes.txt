@@ -1,0 +1,16 @@
+---------------- 1
+
+On à d'abord entrainé l'arbre de prédiction avec un training set d'input X et d'Output Y.
+On lui donne ensuite des nouvelles données en input et on a peut ainsi prédire l'ouput grâce à l'arbre de décision.
+
+---------------- 2
+
+La visualisation de la construction de l'arbre binaire nous montre que le programme va utiliser seulement quelques critères parmi ceux que l'on a donné. Pour chaque critère, le voisin de gauche correspond au résultat faux du critère, et celui de droite au résultat vrai. L'arbre va essayer de trouver des critères qui permettent de bien diviser les données, et à partir de ces critères et des nouvelles données en entrées, il va prédire la sortie.
+
+gini représente la disparité dans un ensemble
+En effet si l'emsemble est parfaitement équilibré on à gini=0 et 0.5 si complétement aléatoire
+
+samples représente le nombre total d'input correspondant à la donnée analysé
+
+---------------- 3
+
