@@ -14,3 +14,46 @@ samples représente le nombre total d'input correspondant à la donnée analysé
 
 ---------------- 3
 
+- What are the features?
+2 year recidivism, number of priors, score factor, Age > 45, Age < 25, Races (African,Asian,Native American...), Gender, Misdemeanor
+
+- How many examples in the dataset?
+Il y a 6172 exemples
+
+- What are your expectations regarding the most important features?
+On suppose que le plus important sera le nombre d'antécédent ou les 2 ans de récidives
+
+- Propose (informally) a way to reduce the dataset : 
+On peut réduire le dataset en retirant les datas doublon
+
+- There many ways to binarize the dataset. How do you propose to do so?
+Le seul critère qui n'est pas binaire est le nombre d'antécédent, on peut le binariser en décidant d'un seuil. On aurait ainsi Number of Prior > X qui serait binaire. On peut par exemple prendre X = 3.
+
+---------------- 4
+
+On a essayé de clean le dataset en enlevant les redondances.
+On passe ainsi de 5273 datas à 351 ce qui parait beaucoup. 
+Cependant cela peut être dû au fait qu'il y'a peut de critères importants.
+Il y a en effet 165 critères différents mais beaucoup n'ont pas de réel interêt.
+
+---------------- 5
+
+max_depth : permet d'assigner la taille maximum de l'arbre.
+min_sample_leaf : permet de choisir le nombre minimum de samples nécessaires correspondant à un critère pour que l'arbre crée un noeud l'utilisant.
+splitter : permet de choisir la stratégie utilisée pour choisir le meilleur split. Par défaut on utilise la "meilleure méthode" à savoir l'utilisation de l'entropie.
+
+---------------- 6
+
+On remarque que la randomisation du split des datas à un grand impact sur les critères utilisés.
+Ca a aussi l'air d'être le cas pour le min_sample_leaf, on remarque qu'en changeant ce paramètre on se concentre beaucoup plus sur des critères liés à l'âge.
+
+---------------- 7
+
+En faisant plusieurs tests on se rend compte que quand l'arbre est trop grand il aura une moins bonne prédiction.
+Le meilleur résultat est celui avec le splitter random
+
+---------------- 8
+
+Avec le 5-cross validation on constate que le résultat de l'arbre trop grand n'a pas changé mais tous les autres l'ont plus ou moins rejoint.
+On peut imaginer qu'en limitant la taille de l'arbre on a ammené l'arbre à générer des bonnes réponses par coincidence.
+
